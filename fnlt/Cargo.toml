@@ -3,6 +3,7 @@ name = "fnlt"
 version = "0.0.1"
 edition = "2021"
 description = "a 'lite' functional language"
+license = "MIT"
 
 [dependencies]
 bigdecimal = "0.4"
