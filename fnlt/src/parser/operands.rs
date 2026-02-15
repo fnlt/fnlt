@@ -18,6 +18,10 @@ pub fn parse_unary_op(input: &str) -> IResult<&str, UnaryOp> {
 /// Parses a binary operand. Longer tokens must be tried first (`&&` before `&`, `||` before `|`, `^^` before `^`, `|>` before `|`).
 pub fn parse_binary_op(input: &str) -> IResult<&str, BinaryOp> {
     alt((
+        value(BinaryOp::Pipe, tag("|>")),
+        value(BinaryOp::And, tag("&&")),
+        value(BinaryOp::Or, tag("||")),
+        value(BinaryOp::Xor, tag("^^")),
         value(BinaryOp::BitAnd, tag("&")),
         value(BinaryOp::BitOr, tag("|")),
         value(BinaryOp::BitXor, tag("^")),
@@ -25,10 +29,6 @@ pub fn parse_binary_op(input: &str) -> IResult<&str, BinaryOp> {
         value(BinaryOp::Add, tag("+")),
         value(BinaryOp::Div, tag("/")),
         value(BinaryOp::Sub, tag("-")),
-        value(BinaryOp::And, tag("&&")),
-        value(BinaryOp::Or, tag("||")),
-        value(BinaryOp::Xor, tag("^^")),
-        value(BinaryOp::Pipe, tag("|>")),
     ))(input)
 }
 
