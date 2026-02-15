@@ -2,6 +2,7 @@
 name = "fnlt"
 version = "0.0.1"
 edition = "2021"
+description = "a 'lite' functional language"
 
 [dependencies]
 bigdecimal = "0.4"

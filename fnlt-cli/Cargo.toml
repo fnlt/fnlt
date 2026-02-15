@@ -2,6 +2,7 @@
 name = "fnlt-cli"
 version = "0.0.1"
 edition = "2021"
+description = "a 'lite' functional language implementation"
 
 [dependencies]
 clap = { version = "4.5.23", features = ["cargo", "derive"] }
